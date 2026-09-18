@@ -34,7 +34,7 @@ metadata:
 3. 改动最小化：只碰完成任务必需的文件，不做顺手重构。
 4. 路径显式：`git add <显式路径>`；禁止 `git add .` 与 `git add -A`。
 5. 跑相关测试；再跑 `npm run check`；涉及链路、持久化或恢复时跑 `npm test`。
-6. 检查 `git diff`（含 staged 与 untracked），确认没有意外文件。
+6. 逐项检查 `git status --short`、`git diff`、`git diff --cached`，并单独确认 untracked 文件（`git diff` 不含 untracked），确保没有意外文件。
 7. 密钥与隐私复查：不得出现凭据、真实运行数据、导出、SQLite、机器绝对路径。
 8. 声明 PASS 前给出证据：命令、退出码、关键输出；没验证就写"未验证"。
 
@@ -42,7 +42,9 @@ metadata:
 
 - 未经明确授权不 `git push`，尤其不推 `main`。
 - 不擅自 commit、推送或改写历史。
-- 不修改 `.runtime/`、真实研究数据或生产库。
+- 运行状态不是源码：不手工篡改真实 `.runtime/` 状态，不提交 `.runtime` 运行数据。
+- 测试可使用明确隔离的 disposable runtime 目录；其产生的 credential、SQLite、session 与私有数据不得进入 Git。
+- 真实研究数据与生产库仍禁止修改。
 - 不把候选产物写成已接纳证据，不创建正式关系或修订。
 - 不为"跑通"放宽预算、取消限流或跳过校验。
 - 不把密钥或任何运行时私有数据写入仓库。
