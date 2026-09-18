@@ -1,6 +1,6 @@
 ---
 name: flowcredit-engineering
-description: "Use when modifying code, scripts, config, or docs under /Users/yimingyang/FlowCredit-Platform, or when a change touches research memory, task/snapshot binding, agent execution or review, budget and resume, credentials and persistence, or git commit/push. FlowCredit 工程纪律与架构不变量（不重复 UI/前端设计类技能）。"
+description: "Use when modifying code, scripts, config, or docs in the FlowCredit Platform repository, or when a change touches research memory, task/snapshot binding, agent execution or review, budget and resume, credentials and persistence, or git commit/push. FlowCredit 工程纪律与架构不变量（不重复 UI/前端设计类技能）。"
 metadata:
   short-description: "FlowCredit 改动前必读的工程纪律、不变量与验证流程"
 ---
